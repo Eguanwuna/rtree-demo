@@ -27,14 +27,14 @@ public class GeometricUtil implements Serializable {
         Polygon polygon = new Polygon();
         polygon.setPointList(polygonVertexList);
         polygon.setLowHigh(minLon, minLat, maxLon, maxLat);
-        polygon.setKey(minLon+","+minLat+"-"+maxLon+","+maxLat);
+        polygon.setKey(minLon+","+minLat+";"+maxLon+","+maxLat);
         return polygon.setRectangle(rectangle);
     }
 
     public static List string2List(String pointStr){
         List<Point> polygonVertexList = new ArrayList<>();
         List<double[]> polygonVertexListDouble = new ArrayList<>();
-        List<String> polygonVertexListStr = new ArrayList<>(Arrays.asList(pointStr.split("-")));
+        List<String> polygonVertexListStr = new ArrayList<>(Arrays.asList(pointStr.split(";")));
 
         for(int i =0;i<polygonVertexListStr.size();i++){
             double[] vertexD = new double[2];
@@ -49,7 +49,5 @@ public class GeometricUtil implements Serializable {
         polygon.setPointListDouble(polygonVertexListDouble);
         return polygonVertexList;
     }
-
-
 
 }
