@@ -113,7 +113,7 @@ public class LbsPointInBatchUtil {
                 se.printStackTrace();
             }
         }
-        double[] p = {46.057633,-21.174992};//被查询的点
+        double[] p = {-150.999551,66.795746};//被查询的点
         Map<String, Integer> resultCity = ifIn(p[0], p[1], polygonMap);
         System.out.println(resultCity);
     }
